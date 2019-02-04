@@ -32,7 +32,7 @@ class App extends Component {
   }
 
     fetchData = (query) => {
-      //this.resetState();
+      this.resetState();
       fetch(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${key}&tags=${query}&per_page=24&format=json&nojsoncallback=1`)
       .then(res => res.json())
       .then(jsonData => {
@@ -54,7 +54,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="container">
-          <Header></Header>
+          <Header searchFunc={this.fetchData}></Header>
         </div>
       </BrowserRouter>
     );

@@ -6,7 +6,7 @@ const Header = (props) => {
     return (
         <div>
             <Form searchFunc={props.searchFunc}></Form>
-            <Nav></Nav>
+            <Nav searchFunc={props.searchFunc}></Nav>
         </div>       
     )
 }

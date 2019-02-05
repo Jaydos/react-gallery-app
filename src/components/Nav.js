@@ -1,8 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Nav = () => {
+const Nav = (props) => {
+    
     return (
-        <h1>Nav</h1>
+        <nav className= "main-nav">
+            <ul>
+                <Link to="/cats">Cats</Link>
+                <Link to="/dogs">Dogs</Link>
+                <Link to="/birds">Birds</Link>                
+            </ul>
+
+        </nav>
     )
 
 }

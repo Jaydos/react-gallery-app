@@ -1,3 +1,5 @@
+Project 7 of the Team Treehouse Full Stack JavaScript Tech Degree.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

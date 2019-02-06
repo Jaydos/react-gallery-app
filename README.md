@@ -1,3 +1,7 @@
+## Project 7 of the Team Treehouse Full Stack JavaScript Tech Degree. 
+Tasked with creating a React app that displayed a set of images fetched from Flickr. Image subject determined by either user clicking on pre-determined categories or searching for images of their own.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

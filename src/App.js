@@ -109,7 +109,6 @@ class App extends Component {
   }
 
   render() {
-    this.fetchStaticData()
     return (
       <BrowserRouter>
         <div className="container">      

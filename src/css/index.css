@@ -60,6 +60,7 @@ input {
   color: #fff;
   transition: all 0.1s ease-in
 }
+
 .main-nav a:hover {
   transform: scale(1.05);
 }

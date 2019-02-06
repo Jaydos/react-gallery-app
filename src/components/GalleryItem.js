@@ -6,7 +6,6 @@ const GalleryItem = (props) => {
             <img src={`https://farm${props.farmID}.staticflickr.com/${props.serverID}/${props.ID}_${props.secret}.jpg`} alt=""></img>    
         </li>
     )
-
 }
 
 export default GalleryItem;

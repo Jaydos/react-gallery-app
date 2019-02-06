@@ -115,12 +115,12 @@ class App extends Component {
           <Header searchFunc={this.fetchDynamicData}></Header>
           {/* Router switch for handling unknown routes */}
           <Switch>
-          <Route exact path="/" component={Welcome}></Route>
-          <Route exact path="/cats" component={() => <Gallery data={this.staticPics.pictures.cats}></Gallery>}></Route>         
-          <Route exact path="/dogs" component={() => <Gallery data={this.staticPics.pictures.dogs}></Gallery>}></Route>
-          <Route exact path="/birds" component={() => <Gallery data={this.staticPics.pictures.birds}></Gallery>}></Route>
-          <Route path="/search=:query" component={() => <Gallery data={this.state}></Gallery>}></Route>
-          <Route component={Error}/>
+            <Route exact path="/" component={Welcome}></Route>
+            <Route exact path="/cats" component={() => <Gallery data={this.staticPics.pictures.cats}></Gallery>}></Route>         
+            <Route exact path="/dogs" component={() => <Gallery data={this.staticPics.pictures.dogs}></Gallery>}></Route>
+            <Route exact path="/birds" component={() => <Gallery data={this.staticPics.pictures.birds}></Gallery>}></Route>
+            <Route path="/search=:query" component={() => <Gallery data={this.state}></Gallery>}></Route>
+            <Route component={Error}/>
           </Switch>
         </div>
       </BrowserRouter>

@@ -2,7 +2,7 @@ import React from 'react';
 import GalleryItem from './GalleryItem';
 
 const Gallery = (props) => {
-    const shouldDisplayLoading = (props.data.isLoading !== undefined && props.data.isLoading);
+    const dataLoading = (props.data.isLoading !== undefined && props.data.isLoading);
     let data = props.data.pictures;
 
     let title = `${props.data.searchTag.charAt(0).toUpperCase() + props.data.searchTag.slice(1)}`;
@@ -23,7 +23,7 @@ const Gallery = (props) => {
     return(
         
         <div className="photo-container">
-        {shouldDisplayLoading 
+        {dataLoading
         ?
         <p>Loading...</p>
         :

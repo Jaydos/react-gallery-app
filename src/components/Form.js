@@ -18,6 +18,9 @@ class Form extends React.Component {
     }
 
     performSearch (query) {
+        this.setState({
+            inputValue: ''
+        })
         this.props.searchFunc(query)
     }
 

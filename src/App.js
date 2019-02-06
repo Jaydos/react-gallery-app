@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
   BrowserRouter,
   Route,
-  //Switch
+  Switch
 } from 'react-router-dom';
 import './App.css';
 
@@ -13,7 +13,7 @@ import "./css/index.css"
 import Header from './components/Header';
 import Welcome from './components/Welcome';
 import Gallery from './components/Gallery';
-/* import Error from './components/Error'; */
+import Error from './components/Error';
 
 
 // Api Key
@@ -36,15 +36,18 @@ class App extends Component {
       pictures : {
         cats: {
           pictures: [],
-          searchTag: 'cats'
+          searchTag: 'cats',
+          isLoading: true
         },
         dogs: {
           pictures: [],
-          searchTag: 'dogs'
+          searchTag: 'dogs',
+          isLoading: true
         },
         birds: {
           pictures: [],
-          searchTag: 'birds'
+          searchTag: 'birds',
+          isLoading: true
         },
       }
     }
@@ -89,8 +92,13 @@ class App extends Component {
     )
     .then(jsonData => {
       this.staticPics.pictures.cats.pictures = jsonData[0].photos.photo
+      this.staticPics.pictures.cats.isLoading = false
+
       this.staticPics.pictures.dogs.pictures = jsonData[1].photos.photo
+      this.staticPics.pictures.dogs.isLoading = false
+
       this.staticPics.pictures.birds.pictures = jsonData[2].photos.photo
+      this.staticPics.pictures.birds.isLoading = false
 
       this.setState({
         staticLoading: false
@@ -105,25 +113,22 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        
         <div className="container">
+        
           <Header searchFunc={this.fetchData}></Header>
+          <Switch>
           <Route exact path="/" component={Welcome}></Route>
-           
-          {this.state.staticLoading
-          ? 
-          null
-          :
-          <div>
+          <Route exact path="/cats" component={() => <Gallery data={this.staticPics.pictures.cats}></Gallery>}></Route>         
+          <Route exact path="/dogs" component={() => <Gallery data={this.staticPics.pictures.dogs}></Gallery>}></Route>
+          <Route exact path="/birds" component={() => <Gallery data={this.staticPics.pictures.birds}></Gallery>}></Route>
+          <Route path="/search=:query" component={() => <Gallery data={this.state}></Gallery>}></Route>
+          <Route component={Error}/>
+          </Switch>
+            
 
           
-            <Route exact path="/cats" component={() => <Gallery data={this.staticPics.pictures.cats}></Gallery>}></Route>         
-            <Route exact path="/dogs" component={() => <Gallery data={this.staticPics.pictures.dogs}></Gallery>}></Route>
-            <Route exact path="/birds" component={() => <Gallery data={this.staticPics.pictures.birds}></Gallery>}></Route>
-            </div>
-          }
 
-          <Route path="/search=:query" component={() => <Gallery data={this.state}></Gallery>}></Route>
+          
           
 
         

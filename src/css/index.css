@@ -27,7 +27,8 @@ a {
 
 .search-form button {
   outline: none;
-  background-color: #438bbd;
+  background-color: rgb(16, 144, 161);
+  height: 100%;
   border: none;
   padding: 0px 15px;
   border-radius: 0 0.35em 0.35em 0;
@@ -54,7 +55,8 @@ input {
   display: block;
   background: #438bbd;
   border-radius: 3px;
-  padding: 5px;
+  padding: 10px;
+  margin: 10px;
   color: #fff;
 }
 
@@ -91,6 +93,10 @@ input {
 
 .photo-container .not-found {
   width: 100%;
+}
+
+.errorLink {
+  color: red;
 }
 
 @media only screen and (max-width: 767px)  {

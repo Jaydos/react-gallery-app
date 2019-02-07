@@ -27,7 +27,7 @@ class App extends Component {
     this.state = {
       pictures: [],
       searchTag: '',
-      isLoading: true 
+      isLoading: true
     }
 
     // Initialise static pictures object to fill in later
@@ -99,8 +99,8 @@ class App extends Component {
         this.staticPics.pictures.birds.isLoading = false
 
         this.setState({
-          isLoading: false
-        })
+            isLoading: false
+          }) 
       })
     })
     .catch(err => {
@@ -110,6 +110,11 @@ class App extends Component {
   
   componentDidMount() {
     this.fetchStaticData()
+
+    // Fetch dynamic data again if user refreshes page on search route.
+    if(window.location.pathname.includes('search') && this.state.searchTag === ''){
+      this.fetchDynamicData(window.location.pathname.slice(8))
+    }
   }
 
   render() {

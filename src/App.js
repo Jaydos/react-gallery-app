@@ -97,6 +97,10 @@ class App extends Component {
 
         this.staticPics.pictures.birds.pictures = jsonData[2].photos.photo
         this.staticPics.pictures.birds.isLoading = false
+
+        this.setState({
+          isLoading: false
+        })
       })
     })
     .catch(err => {
